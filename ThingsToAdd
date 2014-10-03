@@ -1,0 +1,20 @@
+List to Features to Add
+-------------------------
+
+// Might need to hold off on this feature as it may not allign with IOS design patterns.
+// Usually a text field at the top of the window is only for a search field and not adding values
+// to a list.
+- Add task item text field in the same window as the list of task items
+    - animation for this field should be similar to the search field in the Apple "Contacts" app
+    - scrolling up and down should work like the search bar in Facebook
+
+- Save the added values to the phone
+    - eventually want the data saved on ICloud to be able to sync with multiple devices
+
+- Be able to delete Task
+    - maybe swipe delete or checkbox delete
+
+- Task Due date
+    - be able to set a due date
+    - have different sections in the list of tasks separated by the due dates
+    - show the items which are due today in a notification widget
