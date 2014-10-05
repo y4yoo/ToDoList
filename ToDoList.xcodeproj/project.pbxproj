@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		269FDB5619DEE3300074F7C4 /* ThingsToAdd in Resources */ = {isa = PBXBuildFile; fileRef = 269FDB5419DEE3300074F7C4 /* ThingsToAdd */; };
 		ED59CDDA19A645BE0006F44A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED59CDD919A645BE0006F44A /* Foundation.framework */; };
 		ED59CDDC19A645BE0006F44A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED59CDDB19A645BE0006F44A /* CoreGraphics.framework */; };
 		ED59CDDE19A645BE0006F44A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED59CDDD19A645BE0006F44A /* UIKit.framework */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		269FDB5419DEE3300074F7C4 /* ThingsToAdd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ThingsToAdd; sourceTree = "<group>"; };
 		ED59CDD619A645BE0006F44A /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED59CDD919A645BE0006F44A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ED59CDDB19A645BE0006F44A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -108,6 +110,7 @@
 		ED59CDCD19A645BE0006F44A = {
 			isa = PBXGroup;
 			children = (
+				269FDB5419DEE3300074F7C4 /* ThingsToAdd */,
 				ED59CDDF19A645BE0006F44A /* ToDoList */,
 				ED59CDF819A645BE0006F44A /* ToDoListTests */,
 				ED59CDD819A645BE0006F44A /* Frameworks */,
@@ -253,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				269FDB5619DEE3300074F7C4 /* ThingsToAdd in Resources */,
 				ED59CE0D19A64ABE0006F44A /* Main.storyboard in Resources */,
 				ED59CDE419A645BE0006F44A /* InfoPlist.strings in Resources */,
 				ED59CDEC19A645BE0006F44A /* Images.xcassets in Resources */,

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ToDoItem.h"
+#import "ToDoListTableViewController.h"
 
 @implementation AppDelegate
 
@@ -23,32 +24,14 @@
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
-- (void)saveToDoItems:(NSMutableArray *)toDoItems {
-    self.toDoItems = toDoItems;
-}
-
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    NSMutableArray *toDoItems = [[NSMutableArray alloc] init];
-    
-    ToDoItem *item1 = [[ToDoItem alloc] init];
-    item1.itemName = @"Buy milk";
-    [toDoItems addObject:item1];
-    
-    ToDoItem *item2 = [[ToDoItem alloc] init];
-    item2.itemName = @"Buy eggs";
-    [toDoItems addObject:item2];
-    
-    ToDoItem *item3 = [[ToDoItem alloc] init];
-    item3.itemName = @"Read a book";
-    [toDoItems addObject:item3];
-    
-    NSString *docsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *filename = [docsPath stringByAppendingPathComponent:@"tasks"];
-    
-    BOOL saveSuccess = [NSKeyedArchiver archiveRootObject:toDoItems toFile:filename];
+
+    if (self.toDoListTableViewController) {
+        [self.toDoListTableViewController saveToDoItems];
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

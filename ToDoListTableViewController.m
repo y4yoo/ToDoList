@@ -9,6 +9,7 @@
 #import "ToDoListTableViewController.h"
 #import "ToDoItem.h"
 #import "AddToDoItemViewController.h"
+#import "AppDelegate.h"
 
 @interface ToDoListTableViewController ()
 
@@ -17,25 +18,6 @@
 @end
 
 @implementation ToDoListTableViewController
-
-- (IBAction)unwindToList: (UIStoryboardSegue *)segue
-{
-    AddToDoItemViewController *source = [segue sourceViewController];
-    ToDoItem *toDoItem = source.toDoItem;
-    if (toDoItem != nil) {
-        [self.toDoItems addObject:toDoItem];
-        [self.tableView reloadData];
-    }
-}
-
-- (void)loadInitialData {
-    NSString *docsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *filename = [docsPath stringByAppendingPathComponent:@"tasks"];
-    
-    NSArray *entries = [NSKeyedUnarchiver unarchiveObjectWithFile:filename];
-    
-    self.toDoItems = [NSMutableArray arrayWithArray:entries];
-}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -49,6 +31,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate.toDoListTableViewController = self;
+    
     [self loadInitialData];
 }
 
@@ -57,7 +43,7 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Table view data source
+#pragma mark - 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -71,6 +57,7 @@
     return [self.toDoItems count];
 }
 
+#pragma mark - Table cell
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -87,14 +74,40 @@
     return cell;
 }
 
-#pragma mark - Table view delegate
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     ToDoItem *tappedItem = [self.toDoItems objectAtIndex:indexPath.row];
     tappedItem.completed = !tappedItem.completed;
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+}
+
+- (IBAction)unwindToList: (UIStoryboardSegue *)segue
+{
+    AddToDoItemViewController *source = [segue sourceViewController];
+    ToDoItem *toDoItem = source.toDoItem;
+    if (toDoItem != nil) {
+        [self.toDoItems addObject:toDoItem];
+        [self.tableView reloadData];
+    }
+}
+
+#pragma mark - Data Management
+
+- (void)loadInitialData {
+    NSString *docsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *filename = [docsPath stringByAppendingPathComponent:@"tasks"];
+    
+    NSArray *entries = [NSKeyedUnarchiver unarchiveObjectWithFile:filename];
+    
+    self.toDoItems = [NSMutableArray arrayWithArray:entries];
+}
+
+- (BOOL) saveToDoItems {
+    NSString *docsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *filename = [docsPath stringByAppendingPathComponent:@"tasks"];
+    
+    return [NSKeyedArchiver archiveRootObject:self.toDoItems toFile:filename];
 }
 
 @end

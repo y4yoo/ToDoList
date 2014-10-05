@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ToDoListTableViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property NSMutableArray *toDoItems;
+@property ToDoListTableViewController *toDoListTableViewController;
 
 @end
