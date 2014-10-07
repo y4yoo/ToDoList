@@ -1,5 +1,5 @@
 //
-//  XYZAppDelegate.h
+//  AppDelegate.h
 //  ToDoList
 //
 //  Created by Youngho Yoo on 2014-08-21.

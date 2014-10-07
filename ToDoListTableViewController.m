@@ -1,5 +1,5 @@
 //
-//  XYZToDoListTableViewController.m
+//  ToDoListTableViewController.m
 //  ToDoList
 //
 //  Created by Youngho Yoo on 2014-08-24.
@@ -35,12 +35,33 @@
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     appDelegate.toDoListTableViewController = self;
     
+    self.tableView.allowsMultipleSelectionDuringEditing = NO;
+    
     [self loadInitialData];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Delete Task
+
+// Override to support conditional editing of the table view.
+// This only needs to be implemented if you are going to be returning NO
+// for some items. By default, all items are editable.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //add code here for when you hit delete
+        [self.toDoItems removeObjectAtIndex:[indexPath indexAtPosition:1]];
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark - 

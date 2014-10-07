@@ -1,5 +1,5 @@
 //
-//  XYZAddToDoItemViewController.m
+//  AddToDoItemViewController.m
 //  ToDoList
 //
 //  Created by Youngho Yoo on 2014-08-23.

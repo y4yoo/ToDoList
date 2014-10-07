@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="san-OA-s04">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--My To-Do List-->
+        <!--To Do-->
         <scene sceneID="IgG-L4-42Y">
             <objects>
                 <tableViewController id="bxo-VJ-prU" customClass="ToDoListTableViewController" sceneMemberID="viewController">
@@ -276,7 +278,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="My To-Do List" id="SGF-sX-EpH">
+                    <navigationItem key="navigationItem" title="To Do" id="SGF-sX-EpH">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="QbT-tu-QDo">
                             <connections>
                                 <segue destination="6vY-3X-l1N" kind="modal" id="N4A-OD-fX4"/>
@@ -301,16 +303,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New to-do item" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WYr-eU-dXK">
-                                <rect key="frame" x="20" y="113" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New to-do item" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WYr-eU-dXK">
+                                <rect key="frame" x="26" y="114" width="268" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohn-1G-lHd">
+                                <rect key="frame" x="26" y="184" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="DUR-P7-S8A">
+                                <rect key="frame" x="0.0" y="210" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="434339317.02205402">
+                                    <!--2014-10-07 01:48:37 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="WYr-eU-dXK" secondAttribute="trailing" constant="20" id="8bT-zp-8QK"/>
-                            <constraint firstItem="WYr-eU-dXK" firstAttribute="leading" secondItem="YdH-iy-gzv" secondAttribute="leading" constant="20" id="QGp-o7-iWz"/>
+                            <constraint firstAttribute="centerX" secondItem="DUR-P7-S8A" secondAttribute="centerX" id="3SB-KW-QY2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WYr-eU-dXK" secondAttribute="trailing" constant="10" id="KYb-S0-awh"/>
+                            <constraint firstItem="WYr-eU-dXK" firstAttribute="top" secondItem="6xv-Dk-Zu6" secondAttribute="bottom" constant="50" id="bKq-Hz-Shu"/>
+                            <constraint firstItem="Ohn-1G-lHd" firstAttribute="leading" secondItem="YdH-iy-gzv" secondAttribute="leadingMargin" constant="10" id="mpI-D2-2zD"/>
+                            <constraint firstItem="Ohn-1G-lHd" firstAttribute="top" secondItem="WYr-eU-dXK" secondAttribute="bottom" constant="40" id="nJs-6p-ovN"/>
+                            <constraint firstItem="WYr-eU-dXK" firstAttribute="leading" secondItem="YdH-iy-gzv" secondAttribute="leadingMargin" constant="10" id="oFs-Uq-GiB"/>
+                            <constraint firstItem="DUR-P7-S8A" firstAttribute="top" secondItem="Ohn-1G-lHd" secondAttribute="bottom" constant="5" id="ufI-KM-dOf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add To-Do" id="CqZ-zV-8zl">
