@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ToDoItem : NSObject <NSCoding>
+@interface ToDoItem : UITableViewCell <NSCoding>
 
 @property NSString *itemName;
 @property BOOL completed;
-@property NSDate *creationDate;
+@property NSDate *dueDate;
 
 @end

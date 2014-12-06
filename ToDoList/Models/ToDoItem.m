@@ -8,9 +8,13 @@
 
 #import "ToDoItem.h"
 
+@interface ToDoItem ()
+
+@end
+
 @implementation ToDoItem
 
-#pragma mark NSCoding
+#pragma mark - NSCoding
 
 - (id)initWithCoder:(NSCoder *)decoder {
     self = [super init];
@@ -20,7 +24,7 @@
     
     self.itemName = [decoder decodeObjectForKey:@"itemName"];
     self.completed = [decoder decodeBoolForKey:@"completed"];
-    self.creationDate = [decoder decodeObjectForKey:@"creationDate"];
+    self.dueDate = [decoder decodeObjectForKey:@"dueDate"];
     
     return self;
 }
@@ -28,7 +32,7 @@
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:self.itemName forKey:@"itemName"];
     [encoder encodeBool:self.completed forKey:@"completed"];
-    [encoder encodeObject:self.creationDate forKey:@"creationDate"];
+    [encoder encodeObject:self.dueDate forKey:@"dueDate"];
 }
 
 @end

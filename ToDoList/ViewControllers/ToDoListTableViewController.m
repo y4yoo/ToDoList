@@ -7,9 +7,10 @@
 //
 
 #import "ToDoListTableViewController.h"
-#import "ToDoItem.h"
 #import "AddToDoItemViewController.h"
 #import "AppDelegate.h"
+#import "ToDoItem.h"
+#import "HeaderViewCell.h"
 
 @interface ToDoListTableViewController ()
 
@@ -19,15 +20,6 @@
 
 @implementation ToDoListTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -35,14 +27,11 @@
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     appDelegate.toDoListTableViewController = self;
     
+    [self registerCells];
+    
     self.tableView.allowsMultipleSelectionDuringEditing = NO;
     
     [self loadInitialData];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 #pragma mark - Delete Task
@@ -68,7 +57,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
+    // The number of sections should be the number of unique dates
     return 1;
 }
 
@@ -80,9 +69,14 @@
 
 #pragma mark - Table cell
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *headerView = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HeaderViewCell class])];
+    return headerView;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ToDoItem class]) forIndexPath:indexPath];
     
     ToDoItem *toDoItem = [self.toDoItems objectAtIndex:indexPath.row];
     cell.textLabel.text = toDoItem.itemName;
@@ -129,6 +123,17 @@
     NSString *filename = [docsPath stringByAppendingPathComponent:@"tasks"];
     
     return [NSKeyedArchiver archiveRootObject:self.toDoItems toFile:filename];
+}
+
+#pragma mark - Private
+
+- (void)registerCells
+{
+    UINib *toDoItemCell = [UINib nibWithNibName:NSStringFromClass([ToDoItem class]) bundle:nil];
+    [self.tableView registerNib:toDoItemCell forCellReuseIdentifier:NSStringFromClass([ToDoItem class])];
+    UINib *HeaderCell = [UINib nibWithNibName:NSStringFromClass([HeaderViewCell class]) bundle:nil];
+    [self.tableView registerNib:HeaderCell forCellReuseIdentifier:NSStringFromClass([HeaderViewCell class])];
+    
 }
 
 @end
