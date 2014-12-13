@@ -8,7 +8,7 @@
 
 #import "ToDoItemsDataStructure.h"
 #import "ToDoItem.h"
-#import "NSDateHelper.h"
+#import "NSDate+Utilities.h"
 
 @interface ToDoItemsDataStructure()
 
@@ -25,7 +25,7 @@
 
 - (void)addToDoItem:(ToDoItem *)item
 {
-    item.dueDate = [NSDateHelper dateWithoutTime:item.dueDate];
+    item.dueDate = [NSDate dateWithoutTime:item.dueDate];
 }
 
 - (void)removeToDoItem:(NSIndexPath *)indexPath

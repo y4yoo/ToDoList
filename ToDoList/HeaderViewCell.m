@@ -1,23 +1,17 @@
-//
-//  HeaderViewCell.m
-//  ToDoList
-//
-//  Created by Youngho Yoo on 2014-12-05.
-//
-//
-
 #import "HeaderViewCell.h"
+#import "NSDate+Utilities.h"
+
+@interface HeaderViewCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
+@end
 
 @implementation HeaderViewCell
 
-- (void)awakeFromNib {
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setupWithDate:(NSDate *)date
+{
+    [self.dateLabel setText:[NSDate headerViewFormatDate:date]];
 }
 
 @end

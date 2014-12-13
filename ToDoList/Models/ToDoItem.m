@@ -1,11 +1,3 @@
-//
-//  ToDoItem.m
-//  ToDoList
-//
-//  Created by Youngho Yoo on 2014-08-25.
-//
-//
-
 #import "ToDoItem.h"
 
 @interface ToDoItem ()
@@ -14,7 +6,7 @@
 
 @implementation ToDoItem
 
-#pragma mark - NSCoding
+#pragma mark - NSCoding Delegate
 
 - (id)initWithCoder:(NSCoder *)decoder {
     self = [super init];

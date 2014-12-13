@@ -1,14 +1,14 @@
 //
-//  NSDateHelper.m
+//  NSDate+Utilities.m
 //  ToDoList
 //
-//  Created by Youngho Yoo on 2014-10-13.
+//  Created by Youngho Yoo on 2014-12-06.
 //
 //
 
-#import "NSDateHelper.h"
+#import "NSDate+Utilities.h"
 
-@implementation NSDateHelper
+@implementation NSDate (Utilities)
 
 + (NSDate *)dateWithoutTime:(NSDate *)date
 {
@@ -16,6 +16,7 @@
     return [[NSCalendar currentCalendar] dateFromComponents:comps];
 }
 
+/*
 + (NSInteger *)numberOfUniqueDates:(NSArray *)dates
 {
     NSMutableDictionary *uniqueDates = [NSMutableDictionary new];
@@ -27,6 +28,14 @@
         }
     }
     return NSUIntegerMax;
+}
+*/
+
++ (NSString * )headerViewFormatDate:(NSDate *)date
+{
+    NSDateFormatter *weekday = [[NSDateFormatter alloc] init];
+    [weekday setDateFormat: @"EEEE, MMMM d"];
+    return [weekday stringFromDate:date];
 }
 
 @end

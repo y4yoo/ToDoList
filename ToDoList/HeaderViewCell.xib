@@ -27,6 +27,9 @@
                     <constraint firstAttribute="centerY" secondItem="bej-wg-hXw" secondAttribute="centerY" id="rEL-u0-wYl"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="bej-wg-hXw" id="kBU-Bc-5xA"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

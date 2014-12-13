@@ -19,11 +19,11 @@
 		ED59CDF519A645BE0006F44A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED59CDDD19A645BE0006F44A /* UIKit.framework */; };
 		ED59CDFD19A645BE0006F44A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED59CDFB19A645BE0006F44A /* InfoPlist.strings */; };
 		ED59CDFF19A645BE0006F44A /* ToDoListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED59CDFE19A645BE0006F44A /* ToDoListTests.m */; };
-		ED85A9F319EC65060037ED67 /* NSDateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = ED85A9F219EC65060037ED67 /* NSDateHelper.m */; };
 		ED85A9F619EC73D00037ED67 /* ToDoItemsDataStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = ED85A9F519EC73D00037ED67 /* ToDoItemsDataStructure.m */; };
 		EDE8159F1A32907800CD4E64 /* ToDoItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE8159E1A32907800CD4E64 /* ToDoItem.xib */; };
 		EDE815AA1A32C49900CD4E64 /* HeaderViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE815A81A32C49900CD4E64 /* HeaderViewCell.m */; };
 		EDE815AB1A32C49900CD4E64 /* HeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE815A91A32C49900CD4E64 /* HeaderViewCell.xib */; };
+		EDE815AE1A32CA1D00CD4E64 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE815AD1A32CA1D00CD4E64 /* NSDate+Utilities.m */; };
 		EDE8DA3119E607B5003F975B /* ToDoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE8DA2D19E607B5003F975B /* ToDoListTableViewController.m */; };
 		EDE8DA3219E607B5003F975B /* AddToDoItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE8DA2F19E607B5003F975B /* AddToDoItemViewController.m */; };
 		EDE8DA3519E607C5003F975B /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE8DA3419E607C5003F975B /* ToDoItem.m */; };
@@ -58,21 +58,21 @@
 		ED59CDFA19A645BE0006F44A /* ToDoListTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ToDoListTests-Info.plist"; sourceTree = "<group>"; };
 		ED59CDFC19A645BE0006F44A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ED59CDFE19A645BE0006F44A /* ToDoListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoListTests.m; sourceTree = "<group>"; };
-		ED85A9F119EC65060037ED67 /* NSDateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDateHelper.h; path = Helper/NSDateHelper.h; sourceTree = "<group>"; };
-		ED85A9F219EC65060037ED67 /* NSDateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDateHelper.m; path = Helper/NSDateHelper.m; sourceTree = "<group>"; };
 		ED85A9F419EC73D00037ED67 /* ToDoItemsDataStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToDoItemsDataStructure.h; path = Models/ToDoItemsDataStructure.h; sourceTree = "<group>"; };
 		ED85A9F519EC73D00037ED67 /* ToDoItemsDataStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToDoItemsDataStructure.m; path = Models/ToDoItemsDataStructure.m; sourceTree = "<group>"; };
 		EDE8159E1A32907800CD4E64 /* ToDoItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ToDoItem.xib; path = Models/ToDoItem.xib; sourceTree = "<group>"; };
 		EDE815A71A32C49900CD4E64 /* HeaderViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderViewCell.h; sourceTree = "<group>"; };
 		EDE815A81A32C49900CD4E64 /* HeaderViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderViewCell.m; sourceTree = "<group>"; };
 		EDE815A91A32C49900CD4E64 /* HeaderViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderViewCell.xib; sourceTree = "<group>"; };
+		EDE815AC1A32CA1D00CD4E64 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		EDE815AD1A32CA1D00CD4E64 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
 		EDE8DA2D19E607B5003F975B /* ToDoListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToDoListTableViewController.m; path = ViewControllers/ToDoListTableViewController.m; sourceTree = "<group>"; };
 		EDE8DA2E19E607B5003F975B /* ToDoListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToDoListTableViewController.h; path = ViewControllers/ToDoListTableViewController.h; sourceTree = "<group>"; };
 		EDE8DA2F19E607B5003F975B /* AddToDoItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddToDoItemViewController.m; path = ViewControllers/AddToDoItemViewController.m; sourceTree = "<group>"; };
 		EDE8DA3019E607B5003F975B /* AddToDoItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddToDoItemViewController.h; path = ViewControllers/AddToDoItemViewController.h; sourceTree = "<group>"; };
 		EDE8DA3319E607C5003F975B /* ToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToDoItem.h; path = Models/ToDoItem.h; sourceTree = "<group>"; };
 		EDE8DA3419E607C5003F975B /* ToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToDoItem.m; path = Models/ToDoItem.m; sourceTree = "<group>"; };
-		EDE8DA3619E607E7003F975B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ToDoList/Main.storyboard; sourceTree = "<group>"; };
+		EDE8DA3619E607E7003F975B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EDE8DA3819E60824003F975B /* ThingsToAdd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ThingsToAdd; path = ToDoList/ThingsToAdd; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				EDE8DA3819E60824003F975B /* ThingsToAdd */,
-				EDE8DA3619E607E7003F975B /* Main.storyboard */,
 				ED59CDDF19A645BE0006F44A /* ToDoList */,
 				ED59CDF819A645BE0006F44A /* ToDoListTests */,
 				ED59CDD819A645BE0006F44A /* Frameworks */,
@@ -160,12 +159,13 @@
 			children = (
 				EDE815A51A32938000CD4E64 /* Managers */,
 				EDA700CB1A2D530000485FF5 /* Views */,
-				ED85A9EE19EC644D0037ED67 /* Helper */,
 				ED44F51819DA3195000BE384 /* ViewControllers */,
 				ED44F51919DA31B5000BE384 /* Models */,
 				ED59CDE819A645BE0006F44A /* AppDelegate.h */,
 				ED59CDE919A645BE0006F44A /* AppDelegate.m */,
+				EDE8DA3619E607E7003F975B /* Main.storyboard */,
 				ED59CDEB19A645BE0006F44A /* Images.xcassets */,
+				ED85A9EE19EC644D0037ED67 /* Utilities */,
 				ED59CDE019A645BE0006F44A /* Supporting Files */,
 			);
 			path = ToDoList;
@@ -200,13 +200,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		ED85A9EE19EC644D0037ED67 /* Helper */ = {
+		ED85A9EE19EC644D0037ED67 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				ED85A9F119EC65060037ED67 /* NSDateHelper.h */,
-				ED85A9F219EC65060037ED67 /* NSDateHelper.m */,
+				EDE815AC1A32CA1D00CD4E64 /* NSDate+Utilities.h */,
+				EDE815AD1A32CA1D00CD4E64 /* NSDate+Utilities.m */,
 			);
-			name = Helper;
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		EDA700CB1A2D530000485FF5 /* Views */ = {
@@ -332,9 +332,9 @@
 				ED85A9F619EC73D00037ED67 /* ToDoItemsDataStructure.m in Sources */,
 				EDE8DA3519E607C5003F975B /* ToDoItem.m in Sources */,
 				ED59CDEA19A645BE0006F44A /* AppDelegate.m in Sources */,
+				EDE815AE1A32CA1D00CD4E64 /* NSDate+Utilities.m in Sources */,
 				EDE815AA1A32C49900CD4E64 /* HeaderViewCell.m in Sources */,
 				ED59CDE619A645BE0006F44A /* main.m in Sources */,
-				ED85A9F319EC65060037ED67 /* NSDateHelper.m in Sources */,
 				EDE8DA3219E607B5003F975B /* AddToDoItemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

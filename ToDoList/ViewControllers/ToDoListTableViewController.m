@@ -1,11 +1,3 @@
-//
-//  ToDoListTableViewController.m
-//  ToDoList
-//
-//  Created by Youngho Yoo on 2014-08-24.
-//
-//
-
 #import "ToDoListTableViewController.h"
 #import "AddToDoItemViewController.h"
 #import "AppDelegate.h"
@@ -53,7 +45,7 @@
     }
 }
 
-#pragma mark - 
+#pragma mark - TableView lifecycle
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -63,14 +55,22 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
+    // Return the number of tasks due on a specific date
     return [self.toDoItems count];
 }
 
 #pragma mark - Table cell
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *headerView = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HeaderViewCell class])];
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    HeaderViewCell *headerView = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HeaderViewCell class])];
+    return headerView.frame.size.height;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    HeaderViewCell *headerView = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HeaderViewCell class])];
+    [headerView setupWithDate:[NSDate date]];
     return headerView;
 }
 
