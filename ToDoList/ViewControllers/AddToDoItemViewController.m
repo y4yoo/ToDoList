@@ -7,6 +7,7 @@
 //
 
 #import "AddToDoItemViewController.h"
+#import "NSDate+Utilities.h"
 
 @interface AddToDoItemViewController ()
 
@@ -39,7 +40,7 @@
         self.toDoItem = [[ToDoItem alloc] init];
         self.toDoItem.itemName = self.textField.text;
         self.toDoItem.completed = NO;
-        self.toDoItem.dueDate = self.dueDatePicker.date;
+        self.toDoItem.dueDate = [NSDate dateWithoutTime:self.dueDatePicker.date];
     }
 }
 
